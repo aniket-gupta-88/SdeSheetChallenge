@@ -1,0 +1,19 @@
+Here binary search can be applied as in question the matrix given in sorted rowwise and columnwise
+
+bool searchMatrix(vector<vector<int>>& matrix, int target) {
+         int m = matrix.size();
+         int n = matrix[0].size();
+        
+        int i=0,j=n-1; // Point and start the iterator from top row rightmost conner
+        
+        while(i<m && j>=0)
+        {
+            if(target == matrix[i][j]) // if target is reached then return 
+                return true;
+            else if(target > matrix[i][j]) // if target is greater then move downwards in row 
+                i++;
+            else
+                j--;   // if target is smaller then move in left direction
+        }
+        return false;
+}
